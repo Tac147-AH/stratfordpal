@@ -1329,7 +1329,7 @@ p { line-height: 1.75; color: var(--text-light); }
   color: var(--navy);
 }
 
-.stat-label {
+.testimonial-stat .stat-label {
   display: block;
   font-size: 0.8rem;
   color: var(--navy);
@@ -1381,7 +1381,7 @@ p { line-height: 1.75; color: var(--text-light); }
   margin: var(--space-12) 0 var(--space-10);
 }
 
-.event-card {
+.events-grid .event-card {
   background: var(--white);
   border-radius: var(--radius-lg);
   overflow: hidden;
@@ -1391,7 +1391,7 @@ p { line-height: 1.75; color: var(--text-light); }
   grid-template-columns: 120px 1fr;
 }
 
-.event-card:hover {
+.events-grid .event-card:hover {
   box-shadow: var(--shadow-lg);
   transform: translateY(-4px);
 }
@@ -1470,7 +1470,7 @@ p { line-height: 1.75; color: var(--text-light); }
 
 /* Responsive - Events Card Layout */
 @media (max-width: 768px) {
-  .event-card {
+  .events-grid .event-card {
     grid-template-columns: 1fr;
   }
 

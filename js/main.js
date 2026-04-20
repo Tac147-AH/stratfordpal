@@ -53,15 +53,18 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // ── Counter animation ─────────────────────────────────────
 function animateCounter(el, target, duration = 1800) {
-  const isPlus = String(target).includes('+');
-  const num = parseInt(String(target).replace(/[^0-9]/g, ''));
+  const str = String(target);
+  const isPlus = str.includes('+');
+  const isPercent = str.includes('%');
+  const num = parseInt(str.replace(/[^0-9]/g, ''));
+  const suffix = isPlus ? '+' : isPercent ? '%' : '';
   let start = null;
   function step(ts) {
     if (!start) start = ts;
     const progress = Math.min((ts - start) / duration, 1);
     const ease = 1 - Math.pow(1 - progress, 3);
     const current = Math.floor(ease * num);
-    el.textContent = current.toLocaleString() + (isPlus ? '+' : '');
+    el.textContent = current.toLocaleString() + suffix;
     if (progress < 1) requestAnimationFrame(step);
   }
   requestAnimationFrame(step);
@@ -113,8 +116,14 @@ document.querySelectorAll('.animate-on-scroll, [data-count]').forEach(el => obse
     const originalText = btn.textContent;
     btn.textContent = 'Sending…';
     btn.disabled = true;
-    // Simulate send (replace with actual backend/formspree)
-    setTimeout(() => {
+
+    fetch('https://formspree.io/spal@townofstratford.com', {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function(res) {
+      if (!res.ok) throw new Error('server');
       const success = document.querySelector('#form-success');
       if (success) {
         form.style.display = 'none';
@@ -123,7 +132,13 @@ document.querySelectorAll('.animate-on-scroll, [data-count]').forEach(el => obse
         btn.textContent = '✓ Message Sent!';
         btn.style.background = 'var(--success)';
       }
-    }, 1200);
+    })
+    .catch(function() {
+      // Fallback: open mailto so the message is never lost
+      window.location.href = 'mailto:spal@townofstratford.com?subject=Website%20Message';
+      btn.textContent = originalText;
+      btn.disabled = false;
+    });
   });
 })();
 

@@ -142,6 +142,9 @@
       .program-full-body { grid-template-columns: 1fr; }
       .program-full-header { flex-direction: column; gap: var(--space-4); }
     }
+    @media (max-width: 640px) {
+      .status-notices { grid-template-columns: 1fr !important; }
+    }
   </style>
 </head>
 <body>
@@ -203,12 +206,17 @@
   <!-- INTRO + FILTER -->
   <section class="section--sm section--bg">
     <div class="container">
-      <div class="notice-box animate-on-scroll" style="max-width: 720px; margin: 0 auto var(--space-8);">
-        <span class="notice-icon">📋</span>
-        <div>
-          <strong>Registration Info:</strong> Most summer programs open registration in May. Year-round programs (Karate, Police Cadets) accept enrollment anytime. Contact <a href="mailto:spal@townofstratford.com" style="color: var(--navy); font-weight: 600;">spal@townofstratford.com</a> to register or ask questions.
+      <div class="status-notices" style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);max-width:720px;margin:0 auto var(--space-8);">
+        <div class="notice-box" style="background:rgba(22,163,74,0.08);border-color:rgba(22,163,74,0.3);">
+          <span class="notice-icon">✅</span>
+          <div><strong>Open now:</strong> Karate (every Tuesday), Police Cadets, Chess Club, and Roots &amp; Recipes — <a href="mailto:spal@townofstratford.com" style="color:var(--navy);font-weight:600;">email to join</a>.</div>
+        </div>
+        <div class="notice-box">
+          <span class="notice-icon">📅</span>
+          <div><strong>Opens in May:</strong> Summer Camps, PAL Hockey, and COPfit Wellness — spots fill fast. <a href="contact.html" style="color:var(--navy);font-weight:600;">Get notified early</a>.</div>
         </div>
       </div>
+      <p style="text-align:center;font-size:0.8rem;font-family:var(--font-head);font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-light);margin-bottom:var(--space-4);">Filter by category</p>
       <div class="filter-bar">
         <button class="filter-btn active" data-filter="all">All Programs</button>
         <button class="filter-btn" data-filter="Leadership">Leadership</button>
@@ -261,8 +269,8 @@
           </div>
         </div>
         <div class="program-footer">
-          <div class="reg-note">📋 Registration open year-round</div>
-          <a href="mailto:spal@townofstratford.com?subject=Police Cadet Program Inquiry" class="btn btn-navy">Register / Learn More</a>
+          <div class="reg-note">✅ Open now — join any time of year</div>
+          <a href="mailto:spal@townofstratford.com?subject=Police Cadet Program Inquiry" class="btn btn-navy">Register Now — Open Year-Round</a>
         </div>
       </div>
 
@@ -303,8 +311,8 @@
           </div>
         </div>
         <div class="program-footer">
-          <div class="reg-note">📅 Every Tuesday · 7–8 PM · Year-round</div>
-          <a href="mailto:spal@townofstratford.com?subject=PAL Karate Inquiry" class="btn btn-navy">Register / Learn More</a>
+          <div class="reg-note">✅ Open now — drop in any Tuesday at 7 PM</div>
+          <a href="mailto:spal@townofstratford.com?subject=PAL Karate Inquiry" class="btn btn-navy">Join Now — Open Year-Round</a>
         </div>
       </div>
 
@@ -573,13 +581,13 @@
           <div class="program-meta-bar-item">👤 Ages 6–18</div>
           <div class="program-meta-bar-item">📅 Summer program</div>
           <div class="program-meta-bar-item">📍 PAL Building Garden, 900 Longbrook Ave</div>
-          <div class="program-meta-bar-item">📋 Registration opens March</div>
+          <div class="program-meta-bar-item">📋 Registration now open</div>
         </div>
         <div class="program-full-body">
           <div class="program-full-desc">
             <p>Roots and Recipes is a one-of-a-kind program where youth ages 6–18 grow their own food in the PAL Building's garden alongside police officers, then use that harvest to create healthy recipes.</p>
             <p>Participants learn all aspects of gardening — from planting seedlings to harvesting crops — and develop a genuine understanding of healthy living and nutrition. The program culminates in cooking and enjoying meals made from ingredients they grew themselves.</p>
-            <p>A massive hit in 2025, this farm-to-table program will run again with registration opening in March, just before seedlings are started. Don't miss your chance to be part of this extraordinary experience!</p>
+            <p>A massive hit in 2025, this farm-to-table program is back — registration is now open, just before seedlings are started. Don't miss your chance to be part of this extraordinary experience!</p>
           </div>
           <div class="program-highlights">
             <h4>Program Highlights</h4>
@@ -589,13 +597,55 @@
               <div class="highlight-item">Gardening, cooking, and nutrition education</div>
               <div class="highlight-item">Ages 6–18 welcome</div>
               <div class="highlight-item">Huge success in 2025 — returning program</div>
-              <div class="highlight-item">Registration opens March — seedlings start shortly after</div>
+              <div class="highlight-item">Registration now open — seedlings start soon, enroll now</div>
             </div>
           </div>
         </div>
         <div class="program-footer">
-          <div class="reg-note">📋 Registration opens March · Summer program</div>
-          <a href="mailto:spal@townofstratford.com?subject=Roots and Recipes Registration" class="btn btn-navy">Register in March</a>
+          <div class="reg-note">📋 Registration now open · Summer program</div>
+          <a href="mailto:spal@townofstratford.com?subject=Roots and Recipes Registration" class="btn btn-navy">Register Now</a>
+        </div>
+      </div>
+
+      <!-- Chess Club -->
+      <div class="program-full-card animate-on-scroll" id="chess" data-category="Life Skills">
+        <div class="program-full-header">
+          <div class="program-full-icon">♟️</div>
+          <div class="program-full-header-text">
+            <span class="badge badge-navy" style="margin-bottom: var(--space-2);">Life Skills</span>
+            <h2>Chess Club</h2>
+            <p>Strategy, critical thinking, and community — bi-weekly chess for all ages and skill levels</p>
+          </div>
+
+          <img src="assets/images/real-chess-club.avif" alt="PAL Chess Club" style="width:200px;height:150px;object-fit:cover;border-radius:var(--radius-lg);flex-shrink:0;align-self:center;margin-left:auto;display:block;"/>
+        </div>
+        <div class="program-meta-bar">
+          <div class="program-meta-bar-item">👤 All ages</div>
+          <div class="program-meta-bar-item">📅 Every other Friday</div>
+          <div class="program-meta-bar-item">📍 PAL Building, 900 Longbrook Ave</div>
+          <div class="program-meta-bar-item">🔄 Year-round</div>
+        </div>
+        <div class="program-full-body">
+          <div class="program-full-desc">
+            <p>The PAL Chess Club meets every other Friday at the PAL Building, welcoming players of all ages and skill levels. Whether you're picking up a piece for the first time or you've been playing for years, everyone has a seat at the table.</p>
+            <p>Chess develops critical thinking, patience, strategic planning, and focus — skills that benefit young people in school and beyond. It's also a great social activity that brings the whole community together.</p>
+            <p>No registration required — just show up. Check our social media and the homepage banner for the most current schedule, as exact dates vary bi-weekly.</p>
+          </div>
+          <div class="program-highlights">
+            <h4>Program Highlights</h4>
+            <div class="highlight-list">
+              <div class="highlight-item">Open to all ages and skill levels</div>
+              <div class="highlight-item">No registration required — just show up</div>
+              <div class="highlight-item">Meets every other Friday</div>
+              <div class="highlight-item">Builds critical thinking and strategic focus</div>
+              <div class="highlight-item">Fun, social, and welcoming environment</div>
+              <div class="highlight-item">Year-round — no season gaps</div>
+            </div>
+          </div>
+        </div>
+        <div class="program-footer">
+          <div class="reg-note">📅 Every other Friday · No registration required</div>
+          <a href="contact.html" class="btn btn-navy">Get Notified of Dates</a>
         </div>
       </div>
 
