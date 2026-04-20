@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get Involved — Stratford PAL</title>
+  <meta name="description" content="Volunteer, donate, sponsor, or partner with Stratford PAL to help build opportunity and community for youth in Stratford, CT." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .animate-on-scroll {
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .animate-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
+
+    /* Ways to help hero cards */
+    .ways-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-8);
+      margin-bottom: var(--space-16);
+    }
+    .way-card {
+      background: var(--white);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--gray-100);
+    }
+    .way-card-header {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      padding: var(--space-8);
+      position: relative;
+      overflow: hidden;
+    }
+    .way-card-header::before {
+      content: attr(data-icon);
+      position: absolute;
+      right: var(--space-6);
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 4rem;
+      opacity: 0.2;
+    }
+    .way-card-header .way-icon { font-size: 2.5rem; margin-bottom: var(--space-3); }
+    .way-card-header h2 { color: var(--white); font-size: 1.6rem; }
+    .way-card-header p { color: rgba(255,255,255,0.75); margin: 0; font-size: 0.95rem; }
+    .way-card-body { padding: var(--space-8); }
+    .way-card-body p { margin-bottom: var(--space-5); }
+    .way-steps {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      margin-bottom: var(--space-6);
+    }
+    .way-step {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+      font-size: 0.9rem;
+    }
+    .step-num {
+      width: 24px; height: 24px;
+      background: var(--gold);
+      color: var(--navy-dark);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-head);
+      font-weight: 800;
+      font-size: 0.75rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* Sponsor tiers */
+    .sponsor-tiers {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5);
+    }
+    .sponsor-tier {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: var(--space-7);
+      text-align: center;
+      border: 2px solid var(--gray-200);
+      transition: all var(--transition);
+    }
+    .sponsor-tier.featured {
+      border-color: var(--gold);
+      position: relative;
+    }
+    .sponsor-tier.featured::before {
+      content: 'Most Popular';
+      position: absolute;
+      top: -12px; left: 50%;
+      transform: translateX(-50%);
+      background: var(--gold);
+      color: var(--navy-dark);
+      font-family: var(--font-head);
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 2px 12px;
+      border-radius: var(--radius-full);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .sponsor-tier:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .tier-level { font-family: var(--font-head); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-light); margin-bottom: var(--space-2); }
+    .tier-icon { font-size: 2.5rem; margin-bottom: var(--space-3); }
+    .sponsor-tier h3 { color: var(--navy); margin-bottom: var(--space-4); }
+    .tier-perks { display: flex; flex-direction: column; gap: var(--space-2); margin-bottom: var(--space-6); text-align: left; }
+    .tier-perk { display: flex; align-items: center; gap: var(--space-2); font-size: 0.85rem; color: var(--text); }
+    .tier-perk::before { content: '✓'; color: var(--success); font-weight: 800; }
+
+    /* Volunteer checklist */
+    .vol-options {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-4);
+    }
+    .vol-option {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+      padding: var(--space-4);
+      background: rgba(255,255,255,0.06);
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .vol-option .vo-icon { font-size: 1.5rem; flex-shrink: 0; }
+    .vol-option h4 { color: var(--white); font-size: 0.9rem; margin-bottom: 2px; }
+    .vol-option p { font-size: 0.8rem; color: rgba(255,255,255,0.65); margin: 0; }
+
+    @media (max-width: 900px) {
+      .ways-grid { grid-template-columns: 1fr; }
+      .sponsor-tiers { grid-template-columns: 1fr; }
+      .vol-options { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">
+          <div class="nav-logo-badge">PAL</div>
+          <div class="nav-logo-text">
+            <span class="nav-logo-name">Stratford PAL</span>
+            <span class="nav-logo-sub">Police Athletic League</span>
+          </div>
+        </a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="programs.html">Programs</a>
+          <a href="events.html">Events</a>
+          <a href="scholarships.html">Scholarships</a>
+          <a href="get-involved.html" class="active">Get Involved</a>
+          <a href="contact.html">Contact</a>
+          <a href="https://donorbox.org/stratford-pal-donations" target="_blank" rel="noopener" class="nav-cta">Donate</a>
+        </div>
+        <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-mobile">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="events.html">Events</a>
+      <a href="scholarships.html">Scholarships</a>
+      <a href="get-involved.html">Get Involved</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://donorbox.org/stratford-pal-donations" target="_blank" rel="noopener">Donate</a>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>›</span>
+        <span>Get Involved</span>
+      </div>
+      <span class="eyebrow">Join the Mission</span>
+      <h1>Get Involved with Stratford PAL</h1>
+      <p>Volunteer your time, donate, sponsor a program, or bring your community connections. Every contribution — large or small — makes a real difference.</p>
+    </div>
+  </section>
+
+  <!-- WAYS TO HELP -->
+  <section class="section">
+    <div class="container">
+      <div class="ways-grid">
+
+        <!-- Volunteer -->
+        <div class="way-card animate-on-scroll" id="volunteer">
+          <img src="assets/images/real-program-2.avif" alt="Stratford PAL volunteers in action"
+               style="width:100%;height:180px;object-fit:cover;display:block;"/>
+          <div class="way-card-header" data-icon="🙋">
+            <div class="way-icon">🙋</div>
+            <h2>Volunteer</h2>
+            <p>Give your time and skills to make our programs possible</p>
+          </div>
+          <div class="way-card-body">
+            <p>Collaboration of community leaders and volunteers with Stratford Police Officers is what makes PAL flourish. Whether you want to lead a class, coach a sport, assist with events, or share a skill — there's a place for you here.</p>
+            <p><strong>We invite anyone with an idea for a new program to reach out.</strong> All ages are welcome to bring their ideas and let's put something together!</p>
+            <div class="way-steps">
+              <div class="way-step">
+                <div class="step-num">1</div>
+                <span>Email us with your name, availability, and what you'd like to contribute</span>
+              </div>
+              <div class="way-step">
+                <div class="step-num">2</div>
+                <span>We'll schedule a brief conversation to find the right fit</span>
+              </div>
+              <div class="way-step">
+                <div class="step-num">3</div>
+                <span>Get oriented and start making a difference right away</span>
+              </div>
+            </div>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSexzMQw8GGF9QR-0dC2WvcNEvJoCclQll_2JktCxaUYVaYPPg/viewform" target="_blank" rel="noopener" class="btn btn-navy btn-lg" style="width: 100%; justify-content: center;">
+              Apply to Volunteer
+            </a>
+          </div>
+        </div>
+
+        <!-- Donate -->
+        <div class="way-card animate-on-scroll delay-1" id="donate">
+          <img src="assets/images/real-community-2.avif" alt="Supporting Stratford PAL youth programs through donations"
+               style="width:100%;height:180px;object-fit:cover;display:block;"/>
+          <div class="way-card-header" data-icon="❤️">
+            <div class="way-icon">❤️</div>
+            <h2>Donate</h2>
+            <p>100% of every donation goes directly to programs</p>
+          </div>
+          <div class="way-card-body">
+            <p>Every dollar donated to Stratford PAL is used directly for the benefit of our programs. No overhead drain, no administrative black holes — your generosity goes straight to the youth we serve.</p>
+            <p>Donations fund scholarships, equipment grants, field trips, supplies, and new program development. Your contribution has an immediate, tangible impact on real young people in our community.</p>
+            <div class="way-steps">
+              <div class="way-step">
+                <div class="step-num">1</div>
+                <span>Click the Donate button below to visit our secure donation page</span>
+              </div>
+              <div class="way-step">
+                <div class="step-num">2</div>
+                <span>Choose a one-time or recurring donation amount</span>
+              </div>
+              <div class="way-step">
+                <div class="step-num">3</div>
+                <span>Your contribution funds programs immediately</span>
+              </div>
+            </div>
+            <a href="https://donorbox.org/stratford-pal-donations" target="_blank" rel="noopener" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center;">
+              Donate Now
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SPONSORSHIP SECTION -->
+  <section class="section section--bg" id="sponsor">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="eyebrow">Make a Bigger Impact</span>
+        <h2>Sponsor a Program or Youth</h2>
+        <p>Program sponsorships allow businesses and individuals to directly fund specific programs or support a youth's participation. Here are some ways to get involved as a sponsor.</p>
+      </div>
+      <div class="sponsor-tiers animate-on-scroll delay-1">
+        <div class="sponsor-tier">
+          <div class="tier-level">Community Supporter</div>
+          <div class="tier-icon">🌟</div>
+          <h3>Youth Sponsor</h3>
+          <div class="tier-perks">
+            <div class="tier-perk">Fund one youth's program participation</div>
+            <div class="tier-perk">Help cover equipment or registration costs</div>
+            <div class="tier-perk">Acknowledgment from PAL leadership</div>
+            <div class="tier-perk">Know your impact directly</div>
+          </div>
+          <a href="mailto:spal@townofstratford.com?subject=Youth Sponsorship Inquiry" class="btn btn-outline btn-sm" style="width: 100%; justify-content: center;">Get Started</a>
+        </div>
+        <div class="sponsor-tier featured">
+          <div class="tier-level">Program Partner</div>
+          <div class="tier-icon">🏆</div>
+          <h3>Program Sponsor</h3>
+          <div class="tier-perks">
+            <div class="tier-perk">Fund an entire program or session</div>
+            <div class="tier-perk">Business recognition on program materials</div>
+            <div class="tier-perk">Social media shoutout and website listing</div>
+            <div class="tier-perk">Build your community presence</div>
+            <div class="tier-perk">Direct relationship with PAL leadership</div>
+          </div>
+          <a href="mailto:spal@townofstratford.com?subject=Program Sponsorship Inquiry" class="btn btn-navy btn-sm" style="width: 100%; justify-content: center;">Become a Sponsor</a>
+        </div>
+        <div class="sponsor-tier">
+          <div class="tier-level">Strategic Partner</div>
+          <div class="tier-icon">🤝</div>
+          <h3>Community Partner</h3>
+          <div class="tier-perks">
+            <div class="tier-perk">Ongoing partnership with Stratford PAL</div>
+            <div class="tier-perk">Co-create new programs or events</div>
+            <div class="tier-perk">Prominent recognition across channels</div>
+            <div class="tier-perk">Join our partner network</div>
+            <div class="tier-perk">Long-term community relationship</div>
+          </div>
+          <a href="contact.html" class="btn btn-outline btn-sm" style="width: 100%; justify-content: center;">Let's Talk</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOLUNTEER OPPORTUNITIES -->
+  <section class="section section--navy">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="eyebrow">Ways to Help</span>
+        <h2 style="color: var(--white);">Volunteer Opportunities</h2>
+        <p style="color: rgba(255,255,255,0.75);">No matter your skills or schedule, there's a meaningful way to contribute to Stratford PAL. Here are some of the ways community volunteers get involved.</p>
+      </div>
+      <div class="vol-options animate-on-scroll delay-1">
+        <div class="vol-option">
+          <div class="vo-icon">🏋️</div>
+          <div>
+            <h4>Program Instruction</h4>
+            <p>Teach or assist with karate, baking, chess, fishing, or any skill you have to share.</p>
+          </div>
+        </div>
+        <div class="vol-option">
+          <div class="vo-icon">📋</div>
+          <div>
+            <h4>Event Coordination</h4>
+            <p>Help organize, plan, and run PAL events, registration days, and community outings.</p>
+          </div>
+        </div>
+        <div class="vol-option">
+          <div class="vo-icon">🌱</div>
+          <div>
+            <h4>Garden &amp; Maintenance</h4>
+            <p>Help tend the PAL garden for the Roots &amp; Recipes program — planting, watering, harvesting.</p>
+          </div>
+        </div>
+        <div class="vol-option">
+          <div class="vo-icon">📱</div>
+          <div>
+            <h4>Social Media &amp; Outreach</h4>
+            <p>Help spread the word about PAL programs and events through social media and community channels.</p>
+          </div>
+        </div>
+        <div class="vol-option">
+          <div class="vo-icon">🎒</div>
+          <div>
+            <h4>Summer Camp Support</h4>
+            <p>Assist with summer camp operations, field trips, and youth supervision during July camps.</p>
+          </div>
+        </div>
+        <div class="vol-option">
+          <div class="vo-icon">💡</div>
+          <div>
+            <h4>New Program Ideas</h4>
+            <p>Have a skill, hobby, or connection that could become a PAL program? Reach out — we're always listening.</p>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-10">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSexzMQw8GGF9QR-0dC2WvcNEvJoCclQll_2JktCxaUYVaYPPg/viewform" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Apply to Volunteer</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CURRENT PARTNERS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="eyebrow">Our Community</span>
+        <h2>Current Partner Organizations</h2>
+        <p>These local organizations have partnered with Stratford PAL to help us expand our reach and impact. We encourage everyone to support them as they support us.</p>
+      </div>
+      <div class="partners-row animate-on-scroll delay-1" style="gap: var(--space-5);">
+        <div class="partner-chip" style="padding: var(--space-4) var(--space-6); font-size: 1rem;">
+          🌿 Shannon's Nursery &amp; Garden
+        </div>
+        <div class="partner-chip" style="padding: var(--space-4) var(--space-6); font-size: 1rem;">
+          🏒 Shelton Sports Center
+        </div>
+        <div class="partner-chip" style="padding: var(--space-4) var(--space-6); font-size: 1rem;">
+          🛒 Walmart of Stratford
+        </div>
+        <div class="partner-chip" style="padding: var(--space-4) var(--space-6); font-size: 1rem;">
+          🏠 Sterling House Community Center
+        </div>
+      </div>
+      <div class="text-center mt-8 animate-on-scroll">
+        <p style="margin-bottom: var(--space-4);">Interested in becoming a community partner?</p>
+        <a href="contact.html" class="btn btn-navy">Start a Conversation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" style="margin-bottom: var(--space-4);">
+            <div class="nav-logo-badge">PAL</div>
+            <div class="nav-logo-text">
+              <span class="nav-logo-name">Stratford PAL</span>
+              <span class="nav-logo-sub">Police Athletic League</span>
+            </div>
+          </a>
+          <p>Building confidence, connection, and opportunity for Stratford youth.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/stratfordpal" target="_blank" rel="noopener" aria-label="Facebook">📘</a>
+            <a href="https://www.instagram.com/stratford_p.a.l." target="_blank" rel="noopener" aria-label="Instagram">📸</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Get Involved</h4>
+          <ul>
+            <li><a href="#volunteer">Volunteer</a></li>
+            <li><a href="#donate">Donate</a></li>
+            <li><a href="#sponsor">Sponsor</a></li>
+            <li><a href="contact.html">Partner With Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Organization</h4>
+          <ul>
+            <li><a href="about.html">About PAL</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="scholarships.html">Scholarships</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="footer-contact-item">
+            <span class="fc-icon">📍</span>
+            <span>900 Longbrook Avenue<br>Stratford, CT 06614</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="fc-icon">📞</span>
+            <a href="tel:+12033854146">203-385-4146</a>
+          </div>
+          <div class="footer-contact-item">
+            <span class="fc-icon">✉️</span>
+            <a href="mailto:spal@townofstratford.com">spal@townofstratford.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Stratford PAL · All rights reserved</span>
+        <span>900 Longbrook Ave, Stratford, CT 06614</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

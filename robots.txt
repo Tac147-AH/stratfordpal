@@ -1,0 +1,22 @@
+# Robots.txt - SEO Configuration for Search Engines
+
+User-agent: *
+Allow: /
+Disallow: /content/
+Disallow: /data/
+
+# Sitemaps
+Sitemap: https://www.stratfordpal.org/sitemap.xml
+
+# Crawl Delay (optional - remove if not needed)
+# Crawl-delay: 1
+
+# Comment out for production - only for testing
+# Disallow: /
+
+# Specific rules for search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /

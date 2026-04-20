@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stratford PAL — Inspiring Positive Change in Our Community</title>
+  <meta name="description" content="Stratford Police Athletic League builds bridges between law enforcement and youth through sports, education, and leadership programs in Stratford, CT." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    /* Homepage-specific additions */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .animate-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .mobile-cta-bar {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: var(--navy-dark);
+      padding: var(--space-3) var(--space-4);
+      z-index: 999;
+      opacity: 0;
+      transform: translateY(100%);
+      transition: all var(--transition);
+    }
+    .mobile-cta-bar.visible { opacity: 1; transform: translateY(0); }
+    @media (max-width: 640px) {
+      .mobile-cta-bar { display: flex; gap: var(--space-3); }
+      .mobile-cta-bar .btn { flex: 1; text-align: center; justify-content: center; font-size: 0.85rem; }
+    }
+
+    /* Announcement Banner */
+    .announcement {
+      background: var(--gold);
+      padding: 0.55rem var(--space-4);
+      text-align: center;
+      font-family: var(--font-head);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--navy-dark);
+      letter-spacing: 0.02em;
+    }
+    .announcement a { text-decoration: underline; color: var(--navy-dark); }
+
+    /* Mission Section */
+    .mission-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-12);
+      align-items: center;
+    }
+    .mission-text h2 { margin-bottom: var(--space-4); }
+    .mission-text p { margin-bottom: var(--space-4); font-size: 1.05rem; }
+    .mission-values {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-4);
+    }
+    .value-item {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--gray-100);
+    }
+    .value-item .v-icon { font-size: 1.8rem; margin-bottom: var(--space-3); }
+    .value-item h4 { color: var(--navy); font-size: 0.95rem; margin-bottom: var(--space-1); }
+    .value-item p { font-size: 0.82rem; }
+    @media (max-width: 768px) {
+      .mission-content { grid-template-columns: 1fr; }
+      .mission-values { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .mission-values { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Announcement Banner -->
+  <div class="announcement">
+    🎉 Chess Club meets every other Friday! &nbsp;·&nbsp;
+    <a href="programs.html">Summer program registration opens in May →</a>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo" aria-label="Stratford PAL Home">
+          <div class="nav-logo-badge">PAL</div>
+          <div class="nav-logo-text">
+            <span class="nav-logo-name">Stratford PAL</span>
+            <span class="nav-logo-sub">Police Athletic League</span>
+          </div>
+        </a>
+        <div class="nav-links">
+          <a href="index.html" class="active">Home</a>
+          <a href="about.html">About</a>
+          <a href="programs.html">Programs</a>
+          <a href="events.html">Events</a>
+          <a href="scholarships.html">Scholarships</a>
+          <a href="get-involved.html">Get Involved</a>
+          <a href="contact.html">Contact</a>
+          <a href="https://donorbox.org/stratford-pal-donations" target="_blank" rel="noopener" class="nav-cta">Donate</a>
+        </div>
+        <button class="nav-hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-mobile" role="menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="programs.html">Programs</a>
+      <a href="events.html">Events</a>
+      <a href="scholarships.html">Scholarships</a>
+      <a href="get-involved.html">Get Involved</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://donorbox.org/stratford-pal-donations" target="_blank" rel="noopener">Donate</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-heading">
+    <!-- Background photo (subtle, overlaid by gradient) -->
+    <div style="position:absolute;inset:0;z-index:0;overflow:hidden;">
+      <img src="assets/images/real-community.avif" alt="" aria-hidden="true"
+           style="width:100%;height:100%;object-fit:cover;opacity:0.18;"/>
+    </div>
+    <div class="container">
+      <div class="hero-grid">
+        <!-- Content -->
+        <div class="hero-content animate-fadeInUp">
+          <div class="hero-eyebrow">
+            <span>⭐</span>
+            Stratford, CT · Est. 2015
+          </div>
+          <h1 id="hero-heading">
+            Building <span>Confidence,</span><br>
+            Connection &amp; Opportunity
+          </h1>
+          <p class="hero-sub">
+            Stratford PAL brings youth, families, and police officers together through sports, education, and leadership programs that make our community stronger.
+          </p>
+          <div class="hero-actions">
+            <a href="programs.html" class="btn btn-primary btn-lg">Explore Programs</a>
+            <a href="get-involved.html" class="btn btn-secondary btn-lg">Get Involved</a>
+          </div>
+          <div class="hero-stats">
+            <div>
+              <div class="hero-stat-num" data-count="9+">9+</div>
+              <div class="hero-stat-label">Active Programs</div>
+            </div>
+            <div>
+              <div class="hero-stat-num" data-count="60+">60+</div>
+              <div class="hero-stat-label">Youth Served Annually</div>
+            </div>
+            <div>
+              <div class="hero-stat-num" data-count="4+">4+</div>
+              <div class="hero-stat-label">Community Partners</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual Panel -->
+        <div class="hero-visual animate-fadeInUp delay-2">
+          <div class="hero-card-stack">
+            <div class="hero-main-card">
+              <h3>🗓 What's Available</h3>
+              <div class="hero-program-list">
+                <div class="hero-program-item">
+                  <span class="prog-icon">🥋</span>
+                  PAL Karate
+                  <span class="prog-badge">Every Tuesday</span>
+                </div>
+                <div class="hero-program-item">
+                  <span class="prog-icon">♟️</span>
+                  Chess Club
+                  <span class="prog-badge">Bi-weekly</span>
+                </div>
+                <div class="hero-program-item">
+                  <span class="prog-icon">🏒</span>
+                  PAL Hockey
+                  <span class="prog-badge">Summer</span>
+                </div>
+                <div class="hero-program-item">
+                  <span class="prog-icon">☀️</span>
+                  Summer Camps
+                  <span class="prog-badge">July</span>
+                </div>
+                <div class="hero-program-item">
+                  <span class="prog-icon">💪</span>
+                  COPfit Wellness
+                  <span class="prog-badge">Summer</span>
+                </div>
+                <div class="hero-program-item">
+                  <span class="prog-icon">🌱</span>
+                  Roots &amp; Recipes
+                  <span class="prog-badge">Summer</span>
+                </div>
+              </div>
+            </div>
+            <div class="hero-floating-badge">
+              <span class="big-num">100%</span>
+              <span class="badge-label">of donations go directly to programs</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION STRIP -->
+  <div class="mission-strip">
+    <div class="container">
+      <div class="mission-strip-inner">
+        <div class="mission-strip-item">
+          <span class="mission-strip-icon">🤝</span>
+          <span class="mission-strip-label">Police–Community Trust</span>
+        </div>
+        <div class="mission-strip-item">
+          <span class="mission-strip-icon">🌟</span>
+          <span class="mission-strip-label">Youth Empowerment</span>
+        </div>
+        <div class="mission-strip-item">
+          <span class="mission-strip-icon">🏘️</span>
+          <span class="mission-strip-label">Community Connection</span>
+        </div>
+        <div class="mission-strip-item">
+          <span class="mission-strip-icon">📚</span>
+          <span class="mission-strip-label">Education &amp; Leadership</span>
+        </div>
+        <div class="mission-strip-item">
+          <span class="mission-strip-icon">💛</span>
+          <span class="mission-strip-label">Open to Everyone</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT / MISSION SECTION -->
+  <section class="section" id="about-preview">
+    <div class="container">
+      <div class="mission-content">
+        <div class="mission-text animate-on-scroll">
+          <span class="eyebrow">Our Mission</span>
+          <h2>More Than Sports — We're Building a Community</h2>
+          <p>
+            The Stratford Police Department believes we must do more than enforce the law. Through PAL, we build meaningful relationships between officers and youth — creating a safer, more united Stratford.
+          </p>
+          <p>
+            We focus on youth enrichment, education, and leadership — not just athletics. Every dollar raised goes directly to benefit the many programs we run for our community.
+          </p>
+          <div class="divider"></div>
+          <div class="hero-actions" style="margin-top: var(--space-6);">
+            <a href="about.html" class="btn btn-navy">Learn Our Story</a>
+            <a href="contact.html" class="btn btn-outline">Get in Touch</a>
+          </div>
+        </div>
+        <div class="animate-on-scroll delay-2" style="position:relative;">
+          <img src="assets/images/real-community-2.avif" alt="Stratford PAL youth and officers building community together"
+               style="width:100%;border-radius:var(--radius-xl);box-shadow:var(--shadow-xl);display:block;"/>
+          <div style="position:absolute;bottom:var(--space-6);left:var(--space-6);right:var(--space-6);
+                      background:var(--navy-dark);border-radius:var(--radius-lg);padding:var(--space-5);
+                      display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);">
+            <div style="text-align:center;">
+              <div style="font-family:var(--font-head);font-weight:800;font-size:1.6rem;color:var(--gold);">9+</div>
+              <div style="font-size:0.75rem;color:rgba(255,255,255,0.7);margin-top:2px;">Active Programs</div>
+            </div>
+            <div style="text-align:center;">
+              <div style="font-family:var(--font-head);font-weight:800;font-size:1.6rem;color:var(--gold);">100%</div>
+              <div style="font-size:0.75rem;color:rgba(255,255,255,0.7);margin-top:2px;">Donations to Programs</div>
+            </div>
+            <div style="text-align:center;">
+              <div style="font-family:var(--font-head);font-weight:800;font-size:1.6rem;color:var(--gold);">60+</div>
+              <div style="font-size:0.75rem;color:rgba(255,255,255,0.7);margin-top:2px;">Youth Equipped Annually</div>
+            </div>
+            <div style="text-align:center;">
+              <div style="font-family:var(--font-head);font-weight:800;font-size:1.6rem;color:var(--gold);">4+</div>
+              <div style="font-size:0.75rem;color:rgba(255,255,255,0.7);margin-top:2px;">Community Partners</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMS SECTION -->
+  <section class="section section--bg" id="programs-preview">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="eyebrow">What We Offer</span>
+        <h2>Programs for Every Interest</h2>
+        <p>From sports and fitness to gardening and cooking — our programs are designed for all ages and skill levels. No experience needed, just enthusiasm.</p>
+      </div>
+      <div class="programs-grid">
+
+        <div class="program-card animate-on-scroll" data-category="Leadership">
+          <div class="program-icon">🎖️</div>
+          <span class="badge badge-navy program-category">Leadership</span>
+          <h3>Police Cadets &amp; Explorers</h3>
+          <p>Work alongside Stratford Police Officers to develop leadership, self-confidence, and respect. Open to youth 13–20 and middle school Junior Cadets.</p>
+          <div class="program-meta">
+            <div class="program-meta-item"><span class="meta-icon">👤</span> Ages 13–20 (Junior: Middle School)</div>
+            <div class="program-meta-item"><span class="meta-icon">📅</span> Year-round enrollment</div>
+          </div>
+          <a href="programs.html#police-cadets" class="btn btn-outline btn-sm">Learn More</a>
+        </div>
+
+        <div class="program-card animate-on-scroll delay-1" data-category="Fitness">
+          <div class="program-icon">🥋</div>
+          <span class="badge badge-blue program-category">Fitness</span>
+          <h3>PAL Karate</h3>
+          <p>Year-round karate classes at the PAL Building every Tuesday evening. Open to ages 3 and up with all skill levels welcome — even tournament opportunities!</p>
+          <div class="program-meta">
+            <div class="program-meta-item"><span class="meta-icon">👤</span> Ages 3+</div>
+            <div class="program-meta-item"><span class="meta-icon">📅</span> Tuesdays, 7–8 PM · Year-round</div>
+          </div>
+          <a href="programs.html#karate" class="btn btn-outline btn-sm">Learn More</a>
+        </div>
+
+        <div class="program-card animate-on-scroll delay-2" data-category="Sports">
+          <div class="program-icon">🏒</div>
+          <span class="badge badge-gold program-category">Sports</span>
+          <h3>PAL Hockey</h3>
+          <p>Super low-cost Learn to Skate and Learn to Play Hockey programs each summer, with grant funding to outfit up to 60 players annually at Shelton Sports Center.</p>
+          <div class="program-meta">
+            <div class="program-meta-item"><span class="meta-icon">👤</span> Youth</div>
+            <div class="program-meta-item"><span class="meta-icon">📅</span> Summer · Registration opens May</div>
+          </div>
+          <a href="programs.html#hockey" class="btn btn-outline btn-sm">Learn More</a>
+        </div>
+
+        <div class="program-card animate-on-scroll" data-category="Summer">
+          <div class="program-icon">☀️</div>
+          <span class="badge badge-gold program-category">Summer</span>
+          <h3>Summer Camps</h3>
+          <p>A beloved Stratford PAL tradition — week-long summer camps with fun-filled field trips, run out of the PAL Building every July. Registration opens in May.</p>
+          <div class="program-meta">
+            <div class="program-meta-item"><span class="meta-icon">👤</span> Youth</div>
+            <div class="program-meta-item"><span class="meta-icon">📅</span> July · Registration opens May</div>
+          </div>
+          <a href="programs.html#summer-camps" class="btn btn-outline btn-sm">Learn More</a>
+        </div>
+
+        <div class="program-card animate-on-scroll delay-1" data-category="Fitness">
+          <div class="program-icon">💪</div>
+          <span class="badge badge-green program-category">Fitness</span>
+          <h3>COPfit Wellness</h3>
+          <p>A 4-week summer wellness, fitness, and exercise program developed by Stratford Officers for our youth. Spots fill up fast — don't miss registration in May.</p>
+          <div class="program-meta">
+            <div class="program-meta-item"><span class="meta-icon">👤</span> Youth</div>
+            <div class="program-meta-item"><span class="meta-icon">📅</span> Summer · 4-week program</div>
+          </div>
+          <a href="programs.html#copfit" class="btn btn-outline btn-sm">Learn More</a>
+        </div>
+
+        <div class="program-card animate-on-scroll delay-2" data-category="Life Skills">
+          <div class="program-icon">🌱</div>
+          <span class="badge badge-green program-category">Life Skills</span>
+          <h3>Roots &amp; Recipes</h3>
+          <p>Youth and officers grow food in the PAL garden, then cook healthy recipes from their harvest. A true farm-to-table experience — a huge hit in 2025!</p>
+          <div class="program-meta">
+            <div class="program-meta-item"><span class="meta-icon">👤</span> Ages 6–18</div>
+            <div class="program-meta-item"><span class="meta-icon">📅</span> Summer · Registration opens March</div>
+          </div>
+          <a href="programs.html#roots-recipes" class="btn btn-outline btn-sm">Learn More</a>
+        </div>
+
+      </div>
+      <div class="text-center mt-8">
+        <a href="programs.html" class="btn btn-navy btn-lg">View All 9 Programs</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS SECTION -->
+  <section class="section section--navy">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item animate-on-scroll">
+          <div class="stat-num" data-count="9+">9+</div>
+          <div class="stat-label">Active Programs</div>
+        </div>
+        <div class="stat-item animate-on-scroll delay-1">
+          <div class="stat-num" data-count="60+">60+</div>
+          <div class="stat-label">Youth Equipped with Hockey Gear Annually</div>
+        </div>
+        <div class="stat-item animate-on-scroll delay-2">
+          <div class="stat-num" data-count="100">100%</div>
+          <div class="stat-label">of Donations Fund Programs Directly</div>
+        </div>
+        <div class="stat-item animate-on-scroll delay-3">
+          <div class="stat-num" data-count="4+">4+</div>
+          <div class="stat-label">Community Partner Organizations</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTS SECTION -->
+  <section class="section" id="events-preview">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="eyebrow">What's Coming Up</span>
+        <h2>Upcoming Events &amp; Key Dates</h2>
+        <p>Stay connected with what's happening at Stratford PAL. Regular programming, registration windows, and community events.</p>
+      </div>
+      <div class="events-list">
+
+        <div class="event-card animate-on-scroll">
+          <div class="event-date-block">
+            <div class="date-main">FRI</div>
+            <div class="date-sub">Bi-weekly</div>
+          </div>
+          <div class="event-info">
+            <h4>♟️ Chess Club</h4>
+            <p>Join us every other Friday at the PAL Building. All ages and skill levels welcome!</p>
+            <div class="event-detail">📍 900 Longbrook Ave, Stratford</div>
+          </div>
+          <a href="events.html" class="btn btn-outline btn-sm">Details</a>
+        </div>
+
+        <div class="event-card animate-on-scroll delay-1">
+          <div class="event-date-block">
+            <div class="date-main">TUE</div>
+            <div class="date-sub">Weekly</div>
+          </div>
+          <div class="event-info">
+            <h4>🥋 PAL Karate — Weekly Class</h4>
+            <p>Open karate classes for all ages and skill levels. Taught by an experienced instructor.</p>
+            <div class="event-detail">⏰ 7:00–8:00 PM · PAL Building</div>
+          </div>
+          <a href="events.html" class="btn btn-outline btn-sm">Details</a>
+        </div>
+
+        <div class="event-card animate-on-scroll delay-2">
+          <div class="event-date-block">
+            <div class="date-main">MAY</div>
+            <div class="date-sub">2026</div>
+          </div>
+          <div class="event-info">
+            <h4>📋 Summer Program Registration Opens</h4>
+            <p>Registration opens for Summer Camps, COPfit Wellness, and PAL Hockey. Spots fill very quickly!</p>
+            <div class="event-detail">📧 spal@townofstratford.com to be notified</div>
+          </div>
+          <a href="contact.html" class="btn btn-primary btn-sm">Notify Me</a>
+        </div>
+
+      </div>
+      <div class="text-center mt-8">
+        <a href="events.html" class="btn btn-navy">View Full Calendar</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHOLARSHIPS CALLOUT -->
+  <section class="section section--bg">
+    <div class="container">
+      <div class="scholarship-highlight animate-on-scroll">
+        <div>
+          <span class="eyebrow">Accessibility Matters</span>
+          <h2>No Youth Should Be Left Out</h2>
+          <p>
+            Financial barriers should never stop a child from participating. Stratford PAL is committed to making our programs accessible to every family in the community.
+          </p>
+          <div style="display: flex; gap: var(--space-4); flex-wrap: wrap;">
+            <a href="scholarships.html" class="btn btn-primary">Ask About Scholarships</a>
+            <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+          </div>
+        </div>
+        <div class="scholarship-points">
+          <div class="scholarship-point">
+            <div class="point-icon">🎓</div>
+            <div>
+              <h4>Financial Assistance Available</h4>
+              <p>We work with families to ensure cost is never a barrier to participation.</p>
+            </div>
+          </div>
+          <div class="scholarship-point">
+            <div class="point-icon">🏒</div>
+            <div>
+              <h4>Equipment Provided</h4>
+              <p>For programs like hockey, grant funding equips up to 60 youth annually at no cost.</p>
+            </div>
+          </div>
+          <div class="scholarship-point">
+            <div class="point-icon">💛</div>
+            <div>
+              <h4>Community-Supported</h4>
+              <p>Donor contributions make scholarships and subsidized programs possible.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GET INVOLVED / WAYS TO HELP -->
+  <section class="section" id="get-involved-preview">
+    <div class="container">
+      <div class="section-header animate-on-scroll">
+        <span class="eyebrow">We Need You</span>
+        <h2>We Can't Do It Without You</h2>
+        <p>Stratford PAL thrives because of community support. Whether you volunteer your time, sponsor a program, or make a donation — every contribution makes a direct impact.</p>
+      </div>
+      <div class="involve-grid">
+
+        <div class="involve-card animate-on-scroll">
+          <div class="involve-icon">🙋</div>
+          <h3>Volunteer</h3>
+          <p>Collaboration of community leaders and volunteers with police officers is what makes our programs flourish. Have an idea for a new program? Bring it to us — all ages are welcome to contribute.</p>
+          <a href="get-involved.html#volunteer" class="btn btn-navy">Become a Volunteer</a>
+        </div>
+
+        <div class="involve-card animate-on-scroll delay-1">
+          <div class="involve-icon">🤝</div>
+          <h3>Sponsor a Program</h3>
+          <p>Partner with Stratford PAL to sponsor a program or fund a youth's participation. Your support directly enables more children to access life-changing opportunities.</p>
+          <a href="get-involved.html#sponsor" class="btn btn-navy">Become a Sponsor</a>
+        </div>
+
+        <div class="involve-card animate-on-scroll delay-2">
+          <div class="involve-icon">❤️</div>
+          <h3>Make a Donation</h3>
+          <p>Every dollar donated goes directly to programs. No overhead drain — your generosity translates immediately into opportunities for Stratford youth and families.</p>
+          <a href="https://donorbox.org/stratford-pal-donations" target="_blank" rel="noopener" class="btn btn-primary">Donate Now</a>
+        </div>
+
+        <div class="involve-card animate-on-scroll delay-3">
+          <div class="involve-icon">🏢</div>
+          <h3>Community Partnership</h3>
+          <p>Join organizations like Shannon's Nursery, Shelton Sports Center, and Sterling House Community Center in partnering with Stratford PAL to expand our reach and impact.</p>
+          <a href="contact.html" class="btn btn-navy">Become a Partner</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY PARTNERS -->
+  <section class="section--sm section--bg">
+    <div class="container">
+      <div class="text-center mb-6 animate-on-scroll">
+        <span class="eyebrow">Supported By</span>
+        <h3 style="margin-top: var(--space-2);">Our Community Partners</h3>
+      </div>
+      <div class="partners-row animate-on-scroll delay-1">
+        <span class="partner-chip">Shannon's Nursery &amp; Garden</span>
+        <span class="partner-chip">Shelton Sports Center</span>
+        <span class="partner-chip">Walmart of Stratford</span>
+        <span class="partner-chip">Sterling House Community Center</span>
+      </div>
+      <p class="text-center mt-6" style="font-size: 0.9rem;">
+        These local organizations support our mission — <a href="get-involved.html" style="color: var(--blue); font-weight: 600;">become a partner</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- FINAL CTA BANNER -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Ready to Join the Stratford PAL Family?</h2>
+      <p>Explore our programs, register your child, or reach out to learn how you can make a difference in our community today.</p>
+      <div class="btn-actions">
+        <a href="programs.html" class="btn btn-primary btn-lg">Explore Programs</a>
+        <a href="mailto:spal@townofstratford.com" class="btn btn-secondary btn-lg">Email Us to Register</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" style="margin-bottom: var(--space-4);">
+            <div class="nav-logo-badge">PAL</div>
+            <div class="nav-logo-text">
+              <span class="nav-logo-name">Stratford PAL</span>
+              <span class="nav-logo-sub">Police Athletic League</span>
+            </div>
+          </a>
+          <p>Building confidence, connection, and opportunity for Stratford youth through sports, education, and meaningful police-community relationships.</p>
+          <div class="footer-social">
+            <a href="https://www.facebook.com/stratfordpal" target="_blank" rel="noopener" aria-label="Facebook">📘</a>
+            <a href="https://www.instagram.com/stratford_p.a.l." target="_blank" rel="noopener" aria-label="Instagram">📸</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Programs</h4>
+          <ul>
+            <li><a href="programs.html#police-cadets">Police Cadets</a></li>
+            <li><a href="programs.html#karate">PAL Karate</a></li>
+            <li><a href="programs.html#hockey">PAL Hockey</a></li>
+            <li><a href="programs.html#summer-camps">Summer Camps</a></li>
+            <li><a href="programs.html#copfit">COPfit</a></li>
+            <li><a href="programs.html">All Programs →</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Organization</h4>
+          <ul>
+            <li><a href="about.html">About PAL</a></li>
+            <li><a href="events.html">Events &amp; Calendar</a></li>
+            <li><a href="scholarships.html">Scholarships</a></li>
+            <li><a href="get-involved.html">Volunteer</a></li>
+            <li><a href="get-involved.html#sponsor">Sponsor</a></li>
+            <li><a href="https://donorbox.org/stratford-pal-donations" target="_blank" rel="noopener">Donate</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <div class="footer-contact-item">
+            <span class="fc-icon">📍</span>
+            <span>900 Longbrook Avenue<br>Stratford, CT 06614</span>
+          </div>
+          <div class="footer-contact-item">
+            <span class="fc-icon">📞</span>
+            <a href="tel:+12033854146">203-385-4146</a>
+          </div>
+          <div class="footer-contact-item">
+            <span class="fc-icon">✉️</span>
+            <a href="mailto:spal@townofstratford.com">spal@townofstratford.com</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Stratford PAL · All rights reserved</span>
+        <span>900 Longbrook Ave, Stratford, CT 06614 · <a href="tel:+12033854146">203-385-4146</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile CTA Bar -->
+  <div class="mobile-cta-bar" role="complementary" aria-label="Quick actions">
+    <a href="programs.html" class="btn btn-primary">Explore Programs</a>
+    <a href="https://donorbox.org/stratford-pal-donations" target="_blank" rel="noopener" class="btn btn-navy">Donate</a>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

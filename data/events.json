@@ -1,0 +1,62 @@
+[
+  {
+    "id": "chess-club",
+    "title": "Chess Club",
+    "date": "Every other Friday",
+    "time": "TBD — check social media",
+    "location": "PAL Building, 900 Longbrook Ave",
+    "description": "Join the Stratford PAL Chess Club! We meet every other Friday. All skill levels welcome.",
+    "category": "Recurring",
+    "registration": "Email spal@townofstratford.com"
+  },
+  {
+    "id": "karate-weekly",
+    "title": "PAL Karate",
+    "date": "Every Tuesday",
+    "time": "7:00 – 8:00 PM",
+    "location": "PAL Building, 900 Longbrook Ave",
+    "description": "Weekly karate classes open to all ages and skill levels.",
+    "category": "Recurring",
+    "registration": "Open enrollment — contact us"
+  },
+  {
+    "id": "summer-hockey-reg",
+    "title": "Hockey Registration Opens",
+    "date": "May 2026",
+    "time": "TBD",
+    "location": "Online / PAL Building",
+    "description": "Registration opens for the summer Learn to Skate and Learn to Play Hockey programs at Shelton Sports Center.",
+    "category": "Registration",
+    "registration": "Watch social media for announcement"
+  },
+  {
+    "id": "summer-camp-reg",
+    "title": "Summer Camp Registration",
+    "date": "May 2026",
+    "time": "TBD",
+    "location": "PAL Building, 900 Longbrook Ave",
+    "description": "Registration opens for July Summer Camps. Spots are limited — sign up early!",
+    "category": "Registration",
+    "registration": "Email spal@townofstratford.com"
+  },
+  {
+    "id": "copfit-reg",
+    "title": "COPfit Registration Opens",
+    "date": "May 2026",
+    "time": "TBD",
+    "location": "PAL Building, 900 Longbrook Ave",
+    "description": "Registration opens for the 4-week COPfit wellness and fitness program. Spots fill very quickly!",
+    "category": "Registration",
+    "registration": "Watch social media — fills fast!"
+  },
+  {
+    "id": "roots-recipes-reg",
+    "title": "Roots & Recipes Registration",
+    "date": "March 2026",
+    "time": "TBD",
+    "location": "PAL Building Garden, 900 Longbrook Ave",
+    "description": "Registration opens for the farm-to-table gardening and cooking program for ages 6–18.",
+    "category": "Registration",
+    "registration": "Email spal@townofstratford.com"
+  }
+]

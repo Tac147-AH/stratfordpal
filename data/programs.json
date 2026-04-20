@@ -1,0 +1,101 @@
+[
+  {
+    "id": "police-cadets",
+    "name": "Police Cadets & Explorers",
+    "icon": "🎖️",
+    "category": "Leadership",
+    "ages": "13–20 years old",
+    "schedule": "Year-round enrollment",
+    "description": "The Police Cadet/Explorer program gives youth the opportunity to work directly with Stratford Police Officers to learn about leadership, self-confidence, and respect for others. The Junior Cadet program is offered to Stratford Middle School students. Registration is open year-round.",
+    "highlights": ["Work alongside police officers", "Leadership development", "Junior Cadet program for middle schoolers", "Year-round enrollment"],
+    "registration": "Open year-round — email spal@townofstratford.com"
+  },
+  {
+    "id": "karate",
+    "name": "PAL Karate",
+    "icon": "🥋",
+    "category": "Fitness",
+    "ages": "Ages 3 and up",
+    "schedule": "Tuesdays, 7–8 PM · Year-round",
+    "description": "PAL Karate is a year-round program held at the PAL Building on Tuesdays from 7–8 PM, open to ages 3 and over. All skill levels and abilities are welcome. Students also have the opportunity to attend and compete in local tournaments.",
+    "highlights": ["All skill levels welcome", "Tournament opportunities", "Held at PAL Building", "Ages 3 and up"],
+    "registration": "Open year-round — contact us to join"
+  },
+  {
+    "id": "hockey",
+    "name": "PAL Hockey",
+    "icon": "🏒",
+    "category": "Sports",
+    "ages": "Youth",
+    "schedule": "Summer — Registration opens May",
+    "description": "With support from The Rinks at Shelton (Shelton Sports Center), PAL offers super low-cost Learn to Skate and Learn to Play Hockey programs each summer. Grant funding helps outfit up to 60 hockey players annually. Skating begins in July.",
+    "highlights": ["Super low-cost program", "Learn to Skate & Learn to Play", "Equipment provided via grants", "Up to 60 players annually"],
+    "registration": "Registration opens in May each year"
+  },
+  {
+    "id": "baking",
+    "name": "Baking Workshops",
+    "icon": "🍰",
+    "category": "Life Skills",
+    "ages": "All ages",
+    "schedule": "Throughout the year",
+    "description": "Baking workshops are held throughout the year and vary in length and difficulty, offering programs for all ages. If you have an idea or want to assist, reach out and we'll get another session started. Follow the website and social media for the next session.",
+    "highlights": ["All ages welcome", "Varying skill levels", "Open to community ideas", "Multiple sessions per year"],
+    "registration": "Check social media for upcoming sessions"
+  },
+  {
+    "id": "summer-camps",
+    "name": "Summer Camps",
+    "icon": "☀️",
+    "category": "Summer",
+    "ages": "Youth",
+    "schedule": "July · Registration opens May",
+    "description": "A staple of Stratford PAL, summer camps run every year out of the PAL Building and include fun-filled field trips. Registration opens in May for camps held in July. A beloved tradition for Stratford youth and families.",
+    "highlights": ["Fun field trips included", "Held at PAL Building", "A Stratford PAL tradition", "Registration opens May"],
+    "registration": "Registration opens in May each year"
+  },
+  {
+    "id": "copfit",
+    "name": "COPfit",
+    "icon": "💪",
+    "category": "Fitness",
+    "ages": "Youth",
+    "schedule": "Summer · 4-week program",
+    "description": "COPfit is a wellness, fitness, and exercise program developed by Stratford Officers for our youth. This 4-week program runs during the summer and fills quickly — keep an eye out for registration opening in May.",
+    "highlights": ["Developed by Stratford Officers", "Wellness & fitness focus", "4-week summer program", "Fills quickly — register early"],
+    "registration": "Registration opens in May — spots fill fast"
+  },
+  {
+    "id": "fishing-club",
+    "name": "Fishing Club",
+    "icon": "🎣",
+    "category": "Outdoors",
+    "ages": "All ages",
+    "schedule": "Seasonal",
+    "description": "The PAL Fishing Club is set up to bring anglers, first responders, and their families outdoors together. A new program launched in 2025, it creates a fun, community-building experience for the whole family.",
+    "highlights": ["Family-friendly", "First responders participate", "Community bonding outdoors", "New in 2025"],
+    "registration": "Contact us to get involved"
+  },
+  {
+    "id": "bike-squad",
+    "name": "Bike Squad",
+    "icon": "🚴",
+    "category": "Outdoors",
+    "ages": "Youth",
+    "schedule": "May–September annually",
+    "description": "The Bike Squad was formed to give youth in the community a resource for learning bike safety, developing riding skills, and getting outdoors. Led by a dedicated team of officers from all skill levels at the Stratford Police Department.",
+    "highlights": ["Bike safety education", "Led by Stratford Officers", "All skill levels", "Seasonal adventures May–September"],
+    "registration": "Program runs May–September"
+  },
+  {
+    "id": "roots-recipes",
+    "name": "Roots and Recipes",
+    "icon": "🌱",
+    "category": "Life Skills",
+    "ages": "Ages 6–18",
+    "schedule": "Summer · Registration opens March",
+    "description": "Youth and officers grow food in on-site gardens at the PAL Building, learning all aspects of gardening and healthy living. Over the course of the program, youth work with officers to create healthy recipes from what they grow — a true farm-to-table experience. A hit in 2025!",
+    "highlights": ["Farm-to-table experience", "Gardening & cooking skills", "Officers and youth collaborate", "Healthy lifestyle focus"],
+    "registration": "Registration opens March — seedlings start soon after"
+  }
+]
